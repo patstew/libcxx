@@ -28,7 +28,7 @@
 #   define _LIBCPP_HAS_ATOMIC_BUILTINS
 #endif
 
-#if !defined(_LIBCPP_HAS_ATOMIC_BUILTINS) && !defined(_LIBCPP_HAS_NO_THREADS)
+#if !defined(_LIBCPP_HAS_ATOMIC_BUILTINS) && !defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)
 # if defined(_LIBCPP_WARNING)
     _LIBCPP_WARNING("Building libc++ without __atomic builtins is unsupported")
 # else
@@ -40,7 +40,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace {
 
-#if defined(_LIBCPP_HAS_ATOMIC_BUILTINS) && !defined(_LIBCPP_HAS_NO_THREADS)
+#if defined(_LIBCPP_HAS_ATOMIC_BUILTINS) && !defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)
 
 enum __libcpp_atomic_order {
     _AO_Relaxed = __ATOMIC_RELAXED,
@@ -101,7 +101,7 @@ bool __libcpp_atomic_compare_exchange(_ValueType* __val,
                                        __success_order, __fail_order);
 }
 
-#else // _LIBCPP_HAS_NO_THREADS
+#else // _LIBCPP_HAS_NO_ATOMIC_HEADER
 
 enum __libcpp_atomic_order {
     _AO_Relaxed,
@@ -167,7 +167,7 @@ bool __libcpp_atomic_compare_exchange(_ValueType* __val,
     return false;
 }
 
-#endif // _LIBCPP_HAS_NO_THREADS
+#endif // _LIBCPP_HAS_NO_ATOMIC_HEADER
 
 } // end namespace
 

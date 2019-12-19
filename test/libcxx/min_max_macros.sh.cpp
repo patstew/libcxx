@@ -27,7 +27,7 @@ TEST_MACROS();
 TEST_MACROS();
 #include <array>
 TEST_MACROS();
-#ifndef _LIBCPP_HAS_NO_THREADS
+#ifndef _LIBCPP_HAS_NO_ATOMIC_HEADER
 #include <atomic>
 TEST_MACROS();
 #endif

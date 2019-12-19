@@ -160,8 +160,8 @@ feature_test_macros = sorted([ add_version_header(x) for x in [
      "c++17": 201603L,
    },
    "headers": ["atomic"],
-   "depends": "!defined(_LIBCPP_HAS_NO_THREADS)",
-   "internal_depends": "!defined(_LIBCPP_HAS_NO_THREADS)",
+   "depends": "!defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)",
+   "internal_depends": "!defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)",
   },
   {"name": "__cpp_lib_filesystem",
    "values": {
@@ -561,8 +561,8 @@ feature_test_macros = sorted([ add_version_header(x) for x in [
    },
    "headers": ["atomic"],
    "unimplemented": True,
-   "depends": "!defined(_LIBCPP_HAS_NO_THREADS)",
-   "internal_depends": "!defined(_LIBCPP_HAS_NO_THREADS)",
+   "depends": "!defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)",
+   "internal_depends": "!defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)",
    },
 ]], key=lambda tc: tc["name"])
 

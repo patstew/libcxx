@@ -23,7 +23,7 @@
 #include <algorithm>
 #include <any>
 #include <array>
-#ifndef _LIBCPP_HAS_NO_THREADS
+#ifndef _LIBCPP_HAS_NO_ATOMIC_HEADER
 #include <atomic>
 #endif
 #include <bit>

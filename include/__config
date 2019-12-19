@@ -1226,14 +1226,13 @@ _LIBCPP_FUNC_VIS extern "C" void __sanitizer_annotate_contiguous_container(
 
 #if (!defined(_LIBCPP_HAS_C_ATOMIC_IMP) && \
      !defined(_LIBCPP_HAS_GCC_ATOMIC_IMP) && \
-     !defined(_LIBCPP_HAS_EXTERNAL_ATOMIC_IMP)) \
-     || defined(_LIBCPP_HAS_NO_THREADS)
+     !defined(_LIBCPP_HAS_EXTERNAL_ATOMIC_IMP))
 #  define _LIBCPP_HAS_NO_ATOMIC_HEADER
 #else
 #  ifndef _LIBCPP_ATOMIC_FLAG_TYPE
 #    define _LIBCPP_ATOMIC_FLAG_TYPE bool
 #  endif
-#  ifdef _LIBCPP_FREESTANDING
+#  if defined(_LIBCPP_FREESTANDING) || defined(_LIBCPP_HAS_NO_THREADS)
 #    define _LIBCPP_ATOMIC_ONLY_USE_BUILTINS
 #  endif
 #endif

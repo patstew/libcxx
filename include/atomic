@@ -556,9 +556,6 @@ void atomic_signal_fence(memory_order m) noexcept;
 #pragma GCC system_header
 #endif
 
-#ifdef _LIBCPP_HAS_NO_THREADS
-# error <atomic> is not supported on this single threaded system
-#endif
 #ifdef _LIBCPP_HAS_NO_ATOMIC_HEADER
 # error <atomic> is not implemented
 #endif
